@@ -44,3 +44,61 @@ body {
   width: 100%;
 }
 
+
+#productDetailsView {
+  top: 8%;
+  left: 5%;
+  max-width: 1400px;
+  min-height: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition:
+    opacity 0.7s ease-out,
+    transform 0.7s ease-out,
+    overlay 0.7s ease-out allow-discrete,
+    display 0.7s ease-out allow-discrete;
+}
+
+
+#productDetailsView[open] {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+#productDetailsView[close] {
+  opacity: 0;
+  transform: scaleY(0);
+}
+
+@starting-style {
+  #productDetailsView[open] {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  #productDetailsView[close] {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+}
+
+
+
+.modalHeader {
+  display: flex;
+  flex-direction: row;
+  min-width: 1300px;
+  justify-content: space-between;
+}
+
+.modalBody { 
+  padding: 3%;
+  padding-bottom: 1%;
+  display: flex;
+  flex-direction: row;
+}
+
+.modalProductContent { 
+  padding: 2%;
+}

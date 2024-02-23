@@ -31,7 +31,7 @@
         <div class="form-container">
             <div class="shop revp">Customer Reviews</div>
             <div class="lap">Please Review our website</div>
-            <form action="#" method="post" id="reviewForm">
+            <form action="#" id="reviewForm">
                 <div class="textarea">
                     <textarea name="review" id="review" placeholder="Describe your experience.."></textarea>
                 </div>
@@ -57,114 +57,93 @@
             <div class="shop revp">Customer Reviews</div>
             <div class="reviews" id="reviewBoxes">
             
-            <div class="box">
-                <i class="quote fas fa-quote-right"></i>
-                <div class="content">
-                    <div class="info">
-                        <div class="name">John Doe</div>
-                        <div class="job">Web Developer</div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="image">
-                        <img src="img/people/1.png" alt="">
-                    </div>
-                </div>
-                <div class="text">
-                    I am extremely satisfied with the quality of the products. The packaging is also excellent.
-                </div>
-            </div>
-            <div class="box">
-                <i class="quote fas fa-quote-right"></i>
-                <div class="content">
-                    <div class="info">
-                        <div class="name">Phyo Thandar Hlaing</div>
-                        <div class="job">Teacher</div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="image">
-                        <img src="img/people/3.png" alt="">
-                    </div>
-                </div>
-                <div class="text">  I'm delighted to share my positive experience with this fashion website. The service is top-notch,
-                    with very qualified and attentive customer service. Moreover, the product quality exceeded my
-                    expectations. Overall, a fantastic shopping experience!
-                </div>
-            </div>
-            <div class="box">
-                <i class="quote fas fa-quote-right"></i>
-                <div class="content">
-                    <div class="info">
-                        <div class="name">Jane Smith</div>
-                        <div class="job">Designer</div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="image">
-                        <img src="img/people/1.png" alt="">
-                    </div>
-                </div>
-                <div class="text">
-                    The products are amazing, and they really suit my skin. I would highly recommend Glimmer Glass to
-                    everyone.
-                </div>
-            </div>
-            <div class="box">
-                <i class="quote fas fa-quote-right"></i>
-                <div class="content">
-                    <div class="info">
-                        <div class="name">Mark Wilson</div>
-                        <div class="job">Graphic Designer</div>
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                    </div>
-                    <div class="image">
-                        <img src="img/people/2.png" alt="">
-                    </div>
-                </div>
-                <div class="text">
-                    The customer service is excellent. They are very responsive and helpful. I will continue to shop
-                    from Glimmer Glass.
-                </div>
-            </div>
+      
+
         </div>
     </div>
 
-                <!-- (Your existing review boxes code) -->
-            </div>
+        </div>
         </div>
     </div>
-
-    <!-- ... (Previous code) ... -->
-
-    <!-- ... (Previous code) ... -->
-
-    <!-- ... (Previous code) ... -->
 
 <script>
     const reviewForm = document.getElementById('reviewForm');
     const thanksMessage = document.getElementById('thanksMessage');
+    const reviewsList = [
+        {
+            name: 'Hsar Pwint',
+            about: 'Loream ',
+            starts: 3,
+            job: "Web Developer",
+        }
+    ];
+    const jobOptions = ['Web Developer','Techer','Programmer','Software Engineer','Software Architect','Database Anylysis','QA Tester'];
+    const reviewBoxes = document.getElementById('reviewBoxes');
+
+    const  randomIntFromInterval = (min, max) =>  {
+        return Math.floor(Math.random() * (max - min + 1) + min)
+    }
+
+    const reloadReviews = () => {
+        reviewBoxes.innerHTML = '';
+        reviewsList.forEach((review,key) => { 
+            var box = document.createElement('div');
+            box.classList.add('box');
+
+            var quoteIcon = document.createElement('i');
+            quoteIcon.classList.add('quote', 'fas', 'fa-quote-right');
+
+            var content = document.createElement('div');
+            content.classList.add('content');
+
+            var info = document.createElement('div');
+            info.classList.add('info');
+
+            var nameElement = document.createElement('div');
+            nameElement.classList.add('name');
+            nameElement.textContent = review.name;
+
+            var jobElement = document.createElement('div');
+            jobElement.classList.add('job');
+            jobElement.textContent = review.job;
+
+            var stars = document.createElement('div');
+            stars.classList.add('stars');
+
+            for (var i = 0; i < review.stars; i++) {
+                var starIcon = document.createElement('i');
+                starIcon.classList.add('fas', 'fa-star');
+                stars.appendChild(starIcon);
+            }
+
+            info.appendChild(nameElement);
+            info.appendChild(jobElement);
+            info.appendChild(stars);
+
+            var imageContainer = document.createElement('div');
+            imageContainer.classList.add('image');
+
+            var image = document.createElement('img');
+            image.src = 'img/people/1.png';
+            image.alt = '';
+
+            imageContainer.appendChild(image);
+
+            content.appendChild(info);
+            content.appendChild(imageContainer);
+
+            var text = document.createElement('div');
+            text.classList.add('text');
+            text.textContent = review.about
+            // Append quote icon, content, and text to box
+            box.appendChild(quoteIcon);
+            box.appendChild(content);
+            box.appendChild(text);
+
+            reviewBoxes.appendChild(box);
+
+        })
+    }
 
     reviewForm.addEventListener('submit', function (event) {
         event.preventDefault();
@@ -173,15 +152,28 @@
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const about = document.getElementById('about').value;
+        const job   = jobOptions[randomIntFromInterval(0,6)];
+        const stars = randomIntFromInterval(2,5);
 
         if (name && email && about) {
-            // Hide the form and display thanks message
-            reviewForm.style.display = 'none';
-            thanksMessage.style.display = 'block';
+            const formData = { 
+                name,
+                email,
+                about,
+                job,
+                stars
+            }
+            reviewsList.push(formData)
+            reloadReviews()
+            
+            // reviewForm.style.display = 'none';
+            // thanksMessage.style.display = 'block';
         } else {
             // Handle the form submission as usual
             // You can add your own logic here
             console.log('Please fill in all the required fields.');
         }
     });
+
+    reloadReviews()
 </script>

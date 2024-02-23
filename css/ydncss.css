@@ -110,6 +110,7 @@ header .shopping span{
 }
 .card .checkout{
     position: absolute;
+    margin-bottom: auto;
     bottom: 0;
     width: 100%;
     display: grid;
@@ -180,4 +181,22 @@ header .shopping span{
 }
 .listCard .count{
     margin: 0 10px;
+}
+
+#pagination{
+    text-align: center;
+}
+
+#pagination a{
+    text-decoration: none;
+    background-color: #088178;
+    padding: 15px 20px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 600;
+}
+
+#pagination a i{
+    font-size: 16px;
+    font-weight: 600;
 }

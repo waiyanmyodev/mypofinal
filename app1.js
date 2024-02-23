@@ -13,54 +13,7 @@ closeShopping.addEventListener("click", () => {
   document.body.classList.remove("active");
 });
 let products = [
-//   {
-//     id: 1,
-//     name: "Slim Fit Dress",
-//     image: "dr1.jpg",
-//     price: 13000,
-//   },
-//   {
-//     id: 2,
-//     name: "One String",
-//     image: 'd4.jpg',
-//     price: 12000,
-//   },
-//   {
-//     id: 3,
-//     name: "Floral Dress",
-//     image: "dr7.jpg",
-//     price: 15500,
-//   },
-//   {
-//     id: 4,
-//     name: "Bridemaid Dress",
-//     image: "e1.jpg",
-//     price: 35000,
-//   },
-//   {
-//     id: 5,
-//     name: "Tube Top",
-//     image: "c14.jpg",
-//     price: 11000,
-//   },
-//   {
-//     id: 6,
-//     name: "Cargo Pant",
-//     image: "j13.jpg",
-//     price: 17000,
-//   },
-//   {
-//     id: 7,
-//     name: "Crochet skirt",
-//     image: "s24.jpg",
-//     price: 22000,
-//   },
-//   {
-//     id: 8,
-//     name: "Jean Pant",
-//     image: "p18.jpg",
-//     price: 28000,
-//   },
+
   {
     id: 9,
     name: "Jean Flare Pant",
@@ -79,12 +32,6 @@ let products = [
     image: 'e13.jpg',
     price: 28000,
   },
-//   {
-//     id: 12,
-//     name: "Black Mermaid",
-//     image: 'e8.jpg',
-//     price: 27000
-//   },
   {
     id: 13,
     name: "Fancy Glass",

@@ -14,8 +14,10 @@
 
     <body>
 
-<!-- Navbar -->
 
+    <!-- Navbar -->
+
+        </div>
         <section id="header">
             <h4>MYPO</h4>
 
@@ -55,18 +57,17 @@
     <button id="shopNowBtn" style="background-image: url(img/button.png);" onmouseover="changeCursor(this)" onmouseout="resetCursor()" onclick="redirectToShop()">Shop Now</button>
 
 <script>
-function changeCursor(element) {
-element.style.cursor = 'grab';
-}
+    function changeCursor(element) {
+        element.style.cursor = 'grab';
+    }
 
-function resetCursor() {
-document.getElementById('shopNowBtn').style.cursor = 'auto';
-}
+    function resetCursor() {
+        document.getElementById('shopNowBtn').style.cursor = 'auto';
+    }
 
-function redirectToShop() {
-// Redirect to shop.html or add your logic here
-window.location.href = 'shop.html';
-}
+    function redirectToShop() {
+        window.location.href = 'shop.html';
+    }
 </script>
 <h></h1>
 </section>
@@ -308,19 +309,15 @@ window.location.href = 'shop.html';
             <div class="col">
                 <h4>About</h4>
                 <a href="#">About Us</a>
-                <a href="#">Delivery Information</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms & Conditions</a>
-                <a href="#">Contact Us</a>
+                <a href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a>
+                <a href="https://en.wikipedia.org/wiki/Term">Terms & Conditions</a>
+                <a href="about.html">Contact Us</a>
             </div>
 
             <div class="col">
                 <h4>My Account</h4>
-                <a href="#">Sign In</a>
-                <a href="#">View Cart</a>
-                <a href="#">My Whitelist</a>
-                <a href="#">Track My Order</a>
-                <a href="#">Help</a>
+                <a href="login.html">Sign In</a>
+                <a href="about.html">Help</a>
             </div>
 
             <div class="col install">

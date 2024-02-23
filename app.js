@@ -5,7 +5,7 @@ let listCard = document.querySelector(".listCard");
 let body = document.querySelector(".body");
 let total = document.querySelector(".total");
 let quantity = document.querySelector(".quantity");
-
+let productDetailsView = document.getElementById('productDetailsView')
 openShopping.addEventListener("click", () => {
   document.body.classList.add("active");
 });
@@ -107,12 +107,14 @@ let products = [
 let addProductLists = [];
 function initApp() {
   products.forEach((value, key) => {
+    console.log(value)
     let newDiv = document.createElement("div");
     newDiv.classList.add("item");
     newDiv.innerHTML = `
         <img src="img/newproduct/${value.image}"/>
         <div class="title">${value.name}</div>
         <div class="price">${value.price.toLocaleString()}</div>
+        <button style="margin-bottom: 4px;"  onClick="viewDetails(${key})" > View </button> 
         <button onclick="addToCard(${key})">Add To Cart</button>`;
     list.appendChild(newDiv);
   });
@@ -161,4 +163,17 @@ function changeQuantity(key, quantity) {
     addProductLists[key].price = quantity * products[key].price;
   }
   reloadCard();
+}
+
+const viewDetails = (index) => {
+  const product = products[index];
+  const productName  = document.getElementById('productName');
+  const productPrice = document.getElementById('productPrice');
+  const productId    = document.getElementById('productIndex');
+  const productImg = document.getElementById('productImg');
+  productName.innerHTML = product.name;
+  productPrice.innerHTML = product.price;
+  productId.innerHTML = index;
+  productImg.src = `img/newproduct/${product.image}`;
+  productDetailsView.showModal()
 }
